@@ -1,6 +1,8 @@
 import re
 from typing import Optional, Tuple
 
+import hummingbot.connector.derivative.binance_perpetual.constants as CONSTANTS
+
 from hummingbot.client.config.config_var import ConfigVar
 from hummingbot.client.config.config_methods import using_exchange
 
@@ -44,6 +46,16 @@ def convert_from_exchange_trading_pair(exchange_trading_pair: str) -> Optional[s
 
 def convert_to_exchange_trading_pair(hb_trading_pair: str) -> str:
     return hb_trading_pair.replace("-", "")
+
+
+def rest_url(path_url: str, domain: str = "binance_perpetual"):
+    base_url = CONSTANTS.PERPETUAL_BASE_URL if domain == "binance_perpetual" else CONSTANTS.TESTNET_BASE_URL
+    return base_url + CONSTANTS.API_VERSION + path_url
+
+
+def wss_url(endpoint: str, domain: str = "binance_perpetual"):
+    base_ws_url = CONSTANTS.PERPETUAL_WS_URL if domain == "binance_perpetual" else CONSTANTS.TESTNET_WS_URL
+    return base_ws_url + endpoint
 
 
 KEYS = {
