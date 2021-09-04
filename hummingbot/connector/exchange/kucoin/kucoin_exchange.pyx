@@ -60,7 +60,7 @@ from hummingbot.core.utils.estimate_fee import estimate_fee
 km_logger = None
 s_decimal_0 = Decimal(0)
 s_decimal_NaN = Decimal("nan")
-KUCOIN_ROOT_API = "https://api.kucoin.com"
+KUCOIN_ROOT_API = "https://openapi-sandbox.kucoin.com"
 
 
 class KucoinAPIError(IOError):
