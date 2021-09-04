@@ -43,7 +43,7 @@ Transfer desired assets to use for trading in Kucoin and for the assets to refle
 Minimum order size varies per market. All minimum trade quantities can be found in the following public API:
 
 ```
-https://api.kucoin.com/api/v1/symbols
+https://openapi-sandbox.kucoin.com/api/v1/symbols
 ```
 
 The size must be greater than the `baseMinSize` for the symbol and no larger than the `baseMaxSize`. For example, trading pair ETH-USDT minimum order size is 0.0001 ETH.

@@ -38,11 +38,11 @@ from hummingbot.connector.exchange.kucoin.kucoin_utils import (
     convert_to_exchange_trading_pair,
 )
 
-SNAPSHOT_REST_URL = "https://api.kucoin.com/api/v3/market/orderbook/level2"
-SNAPSHOT_REST_URL_NO_AUTH = "https://api.kucoin.com/api/v1/market/orderbook/level2_100"
+SNAPSHOT_REST_URL = "https://openapi-sandbox.kucoin.com/api/v3/market/orderbook/level2"
+SNAPSHOT_REST_URL_NO_AUTH = "https://openapi-sandbox.kucoin.com/api/v1/market/orderbook/level2_100"
 DIFF_STREAM_URL = ""
-TICKER_PRICE_CHANGE_URL = "https://api.kucoin.com/api/v1/market/allTickers"
-EXCHANGE_INFO_URL = "https://api.kucoin.com/api/v1/symbols"
+TICKER_PRICE_CHANGE_URL = "https://openapi-sandbox.kucoin.com/api/v1/market/allTickers"
+EXCHANGE_INFO_URL = "https://openapi-sandbox.kucoin.com/api/v1/symbols"
 
 
 def secs_until_next_oclock():
@@ -101,7 +101,7 @@ class KucoinWSConnectionIterator:
     @staticmethod
     async def get_ws_connection_context() -> WSConnectionContext:
         async with aiohttp.ClientSession() as session:
-            async with session.post('https://api.kucoin.com/api/v1/bullet-public', data=b'') as resp:
+            async with session.post('https://openapi-sandbox.kucoin.com/api/v1/bullet-public', data=b'') as resp:
                 response: aiohttp.ClientResponse = resp
                 if response.status != 200:
                     raise IOError(f"Error fetching Kucoin websocket connection data."

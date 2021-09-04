@@ -16,7 +16,7 @@ from hummingbot.core.data_type.user_stream_tracker_data_source import UserStream
 from hummingbot.connector.exchange.kucoin.kucoin_auth import KucoinAuth
 from hummingbot.logger import HummingbotLogger
 
-KUCOIN_API_ENDPOINT = "https://api.kucoin.com"
+KUCOIN_API_ENDPOINT = "https://openapi-sandbox.kucoin.com"
 KUCOIN_USER_STREAM_ENDPOINT = "/api/v1/bullet-private"
 
 KUCOIN_PRIVATE_TOPICS = [

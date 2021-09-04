@@ -54,7 +54,7 @@ class RateOracle(NetworkBase):
     coingecko_usd_price_url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency={}&order=market_cap_desc" \
                               "&per_page=250&page={}&sparkline=false"
     coingecko_supported_vs_tokens_url = "https://api.coingecko.com/api/v3/simple/supported_vs_currencies"
-    kucoin_price_url = "https://api.kucoin.com/api/v1/market/allTickers"
+    kucoin_price_url = "https://openapi-sandbox.kucoin.com/api/v1/market/allTickers"
     ascend_ex_price_url = "https://ascendex.com/api/pro/v1/ticker"
 
     @classmethod
